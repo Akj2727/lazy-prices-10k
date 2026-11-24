@@ -1,0 +1,31 @@
+[project]
+name = "lazyprices"
+version = "0.1.0"
+description = "Year-over-year 10-K text change signals from SEC EDGAR, with a point-in-time backtest"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy",
+  "pandas",
+  "scikit-learn",
+  "requests",
+  "beautifulsoup4",
+  "lxml",
+  "yfinance",
+  "statsmodels",
+  "matplotlib",
+  "tabulate",
+]
+
+[project.optional-dependencies]
+finbert = ["transformers", "torch"]
+test = ["pytest"]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
